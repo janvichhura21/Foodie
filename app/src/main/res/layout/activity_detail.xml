@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".detail.DetailActivity">
+
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/dishImage1"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#E91E63"
+            android:src="@drawable/youtube"
+            android:id="@+id/youtube"
+            app:layout_constraintTop_toTopOf="@+id/dishImage1"
+            app:layout_constraintVertical_bias="0.551" />
+
+
+        <TextView
+            android:id="@id/dishImage"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dishImage1"
+            tools:text="Dosa" />
+
+
+        <!-- <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/dishImage"
+            app:layout_constraintVertical_bias="0.102"
+            tools:layout_editor_absoluteX="-16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dishImage"
+                app:layout_constraintVertical_bias="0.084"
+                tools:layout_editor_absoluteX="0dp">
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25sp"
+                    tools:text="Dosa" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Instruction" />
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    tools:text="Instruction" />
+
+            </LinearLayout>
+        </ScrollView>-->
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+
+            app:layout_constraintTop_toBottomOf="@+id/dishImage1"
+            app:layout_constraintVertical_bias="0.134"
+            tools:layout_editor_absoluteX="-15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/price"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    tools:text="₹1200" />
+                <TextView
+                    android:layout_below="@+id/price"
+                    android:id="@+id/instruction"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Instruction" />
+
+
+                <TextView
+                    android:id="@+id/instructions"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/instruction"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    tools:text="Instruction" />
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+     <Button
+         android:id="@+id/add"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintBottom_toBottomOf="parent"
+         android:layout_marginBottom="10dp"
+         android:text="Add to Cart"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
