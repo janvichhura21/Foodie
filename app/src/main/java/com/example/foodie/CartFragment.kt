@@ -14,6 +14,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -73,15 +74,14 @@ class CartFragment : Fragment(), CartAdapter.OnClickListener {
             Log.d("total",c)
             val data=listOf(c)
             for (element in data) {
-                    val price = element.toIntOrNull()
-
-                    if (price != null) {
-                        a += price
-                        Log.d("price1", a.toString())
+                val price = element[0].toInt()
+                if (price != null) {
+                    a += price
+                    Log.d("Log", price.toString())
+                } else {
+                    Log.d("Log",price)
 
                 }
-
-
             }
             Log.d("price1", a.toString())
            binding.price.text=a.toString()
@@ -129,7 +129,7 @@ class CartFragment : Fragment(), CartAdapter.OnClickListener {
     }
 
     override fun onRemoveClick(cartItems: List<CartItem>,position: Int) {
-        val data=cartItems[position]
+        val data =cartItems[position]
             Log.d("item","${data.name}delete items")
             Toast.makeText(requireContext(), "delete item", Toast.LENGTH_SHORT).show()
             viewModel.deleteDetails()

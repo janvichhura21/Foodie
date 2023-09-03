@@ -164,13 +164,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Set Menu" />
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
+                <Spinner
+                    android:id="@+id/sortSpinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:text="View All"
-                    android:textColor="#E91E63"/>
+                    
+                    android:layout_alignParentEnd="true"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv1"

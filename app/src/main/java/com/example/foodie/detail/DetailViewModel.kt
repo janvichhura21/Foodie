@@ -69,6 +69,7 @@ class DetailViewModel:ViewModel() {
     fun getCartItems() {
         var db= FirebaseFirestore.getInstance()
         db.collection("Cart")
+            .whereEqualTo("id",FirebaseAuth.getInstance().currentUser!!.uid)
             .get()
             .addOnSuccessListener {
                 val data = it.toObjects(CartItem::class.java)
